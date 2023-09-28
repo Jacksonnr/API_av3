@@ -7,7 +7,8 @@
 
 const express = require ('express');
 const app = express();
-const User = require('./models/User');
+const Jogos = require('./models/Jogos');
+const Usuarios = require('./models/Usuarios');
 
 app.use(express.json());
 
@@ -15,8 +16,22 @@ app.get('/', async (req, res) =>{
     res.send('Pagina inicial');
 });
 
-app.post('/cadastrar', async (req, res) =>{
-    await User.create(req.body)
+app.post('/cadastrar/jogos', async (req, res) =>{
+    await Jogos.create(req.body)
+    .then(() => {
+        return res.json({
+            mensagem: "Jogo cadastrado com sucesso!!"
+        });
+    }).catch(() => {
+        return res.status(400).json({
+            mensagem: "Erro!! Jogo não pode ser cadastrado."
+        })
+    })
+
+});
+
+app.post('/cadastrar/usuarios', async (req, res) =>{
+    await Jogos.create(req.body)
     .then(() => {
         return res.json({
             mensagem: "Usuário cadastrado com sucesso!!"
@@ -26,7 +41,6 @@ app.post('/cadastrar', async (req, res) =>{
             mensagem: "Erro!! Usuário não pode ser cadastrado."
         })
     })
-    res.send('Pagina cadastrar');
 
 });
 

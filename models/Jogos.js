@@ -6,7 +6,8 @@
 
 const Sequelize = require ('sequelize');
 const db = require ('./db');
-const User = db.define('users', {
+const Usuarios = require('./Usuarios');
+const Jogos = db.define('Jogos', {
     id:{
         type: Sequelize.INTEGER, 
         autoIncrement: true,
@@ -36,6 +37,10 @@ const User = db.define('users', {
     id_User: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+            model: 'Usuarios',
+            key: 'id',
+        }
     },
     nota: {
         type: Sequelize.INTEGER,
@@ -45,7 +50,9 @@ const User = db.define('users', {
 
 });
 
-//forçar a criação de tabela caso não estejam criadas no banco de dados
-//User.sync();
+Jogos.belongsTo(Usuarios, { foreignKey: 'id_User' });
 
-module.exports = User;
+//forçar a criação de tabela caso não estejam criadas no banco de dados
+// User.sync();
+
+module.exports = Jogos;

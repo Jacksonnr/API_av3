@@ -14,7 +14,7 @@ bancoTeste.authenticate()
 .then(function(){
     console.log('Conexão com banco de dados realizada com sucesso!')
 }).catch(function(){
-    console.log('Erro conexão com banco de dados');
+    console.log('Erro na conexão com banco de dados');
 })
 
 module.exports = bancoTeste;
