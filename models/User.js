@@ -17,13 +17,35 @@ const User = db.define('users', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    email: {
+    desenvolvedora: {
         type: Sequelize.STRING,
         allowNull: false,
+    },
+    plataforma: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    categoria: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    estado_Jogado: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    id_User: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
+    nota: {
+        type: Sequelize.INTEGER,
+        allowNull: false
     }
+
+
 });
 
-//criação de tabela
+//forçar a criação de tabela caso não estejam criadas no banco de dados
 //User.sync();
 
 module.exports = User;

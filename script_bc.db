@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS jogos(
+id_Jogo int unique auto_increment primary key not null,
+nome varchar(255) not null,
+desenvolvedora varchar(255) not null,
+plataforma varchar(255) not null,
+categoria varchar(255) not null,
+estado_Jogado varchar(255) not null,
+id_User int unique not null,
+nota int not null
+);
+CREATE TABLE IF NOT EXISTS usuarios (
+email varchar(255) not null,
+senha varchar(255) not null,
+nome varchar(255) not null,
+userName varchar(255) not null,
+id int unique primary key auto_increment not null
+);
+
+ALTER TABLE jogos ADD CONSTRAINT FOREIGN KEY (id_user) REFERENCES usuarios (id);
+
+COMMIT;
