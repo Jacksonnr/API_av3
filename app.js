@@ -31,7 +31,7 @@ app.post('/cadastrar/jogos', async (req, res) =>{
 });
 
 app.post('/cadastrar/usuarios', async (req, res) =>{
-    await Jogos.create(req.body)
+    await Usuarios.create(req.body)
     .then(() => {
         return res.json({
             mensagem: "Usuário cadastrado com sucesso!!"
