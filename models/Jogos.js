@@ -50,9 +50,9 @@ const Jogos = db.define('Jogos', {
 
 });
 
-Jogos.belongsTo(Usuarios, { foreignKey: 'id_User' });
+// Jogos.belongsTo(Usuarios, { foreignKey: 'id_User' });
 
 //forçar a criação de tabela caso não estejam criadas no banco de dados
-// User.sync();
+Jogos.sync();
 
 module.exports = Jogos;

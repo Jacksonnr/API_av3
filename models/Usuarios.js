@@ -28,8 +28,8 @@ const Usuarios = db.define('Usuarios',{
     },
 });
 
-Usuarios.hasMany(Jogos, { foreignKey: 'id_User' });
+// Usuarios.hasMany(Jogos, { foreignKey: 'id_User' });
 
-// Usuarios.sync();
+Usuarios.sync();
 
 module.exports = Usuarios;
