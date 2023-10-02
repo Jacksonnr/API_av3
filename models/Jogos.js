@@ -5,9 +5,8 @@
 
 
 const Sequelize = require ('sequelize');
-const db = require ('./db');
-const Usuarios = require('./Usuarios');
-const Jogos = db.define('Jogos', {
+const dataBase = require ('./dataBase');
+const Jogos = dataBase.define('Jogos', {
     id:{
         type: Sequelize.INTEGER, 
         autoIncrement: true,
@@ -51,8 +50,5 @@ const Jogos = db.define('Jogos', {
 });
 
 // Jogos.belongsTo(Usuarios, { foreignKey: 'id_User' });
-
-//forçar a criação de tabela caso não estejam criadas no banco de dados
-Jogos.sync();
 
 module.exports = Jogos;

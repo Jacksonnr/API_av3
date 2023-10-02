@@ -1,7 +1,6 @@
 const Sequelize = require ('sequelize');
-const db = require ('./db');
-const Jogos = require('./Jogos');
-const Usuarios = db.define('Usuarios',{
+const dataBase = require ('./dataBase');
+const Usuarios = dataBase.define('Usuarios',{
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -29,7 +28,5 @@ const Usuarios = db.define('Usuarios',{
 });
 
 // Usuarios.hasMany(Jogos, { foreignKey: 'id_User' });
-
-Usuarios.sync();
 
 module.exports = Usuarios;

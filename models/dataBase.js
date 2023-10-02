@@ -5,16 +5,16 @@
 // O comando ".authenticate()" é opcional, sendo que pode ser utilizado para verificar se a conexão em tempo real está sendo efetuada
 
 const Sequelize = require('sequelize');
-const bancoTeste = new Sequelize ('teste', 'root', '123456',{
+const dataBase = new Sequelize ('teste', 'root', '123456',{
     host: 'localhost',
     dialect: 'mysql'
 });
 
-bancoTeste.authenticate()
+dataBase.authenticate()
 .then(function(){
     console.log('Conexão com banco de dados realizada com sucesso!')
 }).catch(function(){
     console.log('Erro na conexão com banco de dados');
 })
 
-module.exports = bancoTeste;
+module.exports = dataBase;

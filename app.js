@@ -12,9 +12,7 @@ const Usuarios = require('./models/Usuarios');
 
 app.use(express.json());
 
-app.get('/', async (req, res) =>{
-    res.send('Pagina inicial');
-});
+
 
 app.post('/cadastrar/jogos', async (req, res) =>{
     await Jogos.create(req.body)
