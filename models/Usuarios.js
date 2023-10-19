@@ -27,6 +27,5 @@ const Usuarios = dataBase.define('Usuarios',{
     },
 });
 
-// Usuarios.hasMany(Jogos, { foreignKey: 'id_User' });
-
+Usuarios.sync({alter: true});
 module.exports = Usuarios;

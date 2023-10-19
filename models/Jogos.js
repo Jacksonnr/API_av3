@@ -36,19 +36,11 @@ const Jogos = dataBase.define('Jogos', {
     id_User: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-            model: 'Usuarios',
-            key: 'id',
-        }
     },
     nota: {
         type: Sequelize.INTEGER,
         allowNull: false
     }
-
-
 });
-
-// Jogos.belongsTo(Usuarios, { foreignKey: 'id_User' });
-
+Jogos.sync({alter: true});
 module.exports = Jogos;

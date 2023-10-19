@@ -5,7 +5,7 @@
 // O comando ".authenticate()" é opcional, sendo que pode ser utilizado para verificar se a conexão em tempo real está sendo efetuada
 
 const Sequelize = require('sequelize');
-const dataBase = new Sequelize ('teste', 'root', '123456',{
+const dataBase = new Sequelize ('Projeto', 'root', '123456',{
     host: 'localhost',
     dialect: 'mysql'
 });
