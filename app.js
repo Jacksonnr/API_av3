@@ -9,6 +9,7 @@ const express = require ('express');
 const app = express();
 const Jogos = require('./models/Jogos');
 const Usuarios = require('./models/Usuarios');
+const Usuarios_Jogos = require('./models/Usuarios_Jogos');
 
 app.use(express.json());
 

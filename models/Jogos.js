@@ -17,7 +17,7 @@ const Jogos = dataBase.define('Jogos', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    desenvolvedora: {
+    desenvolvedora: { 
         type: Sequelize.STRING,
         allowNull: false,
     },
